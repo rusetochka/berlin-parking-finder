@@ -1,0 +1,18 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+
+.icon { font-size: 12px; }
+
+.garage   { background: rgba(167, 139, 250, 0.18); color: var(--color-garage);    border: 1px solid rgba(167, 139, 250, 0.35); }
+.lot      { background: rgba(56, 189, 248, 0.18);  color: var(--color-lot);       border: 1px solid rgba(56, 189, 248, 0.35);  }
+.parkRide { background: rgba(52, 211, 153, 0.18);  color: var(--color-park-ride); border: 1px solid rgba(52, 211, 153, 0.35);  }
+.street   { background: rgba(192, 132, 252, 0.18); color: var(--color-street);    border: 1px solid rgba(192, 132, 252, 0.35); }
+.unknown  { background: rgba(255, 255, 255, 0.08); color: var(--color-text-secondary); border: 1px solid rgba(255, 255, 255, 0.16); }

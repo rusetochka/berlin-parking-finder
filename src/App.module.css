@@ -1,0 +1,132 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ─── Sidebar ─────────────────────────────────────────────────────────────── */
+
+.sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-deep);
+  -webkit-backdrop-filter: var(--glass-blur-heavy);
+  backdrop-filter: var(--glass-blur-heavy);
+  border-right: 1px solid var(--border-soft);
+  overflow: hidden;
+  z-index: var(--z-panel);
+}
+
+/* ─── Map panel ───────────────────────────────────────────────────────────── */
+
+.mapPanel {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+.mapResultsBadge {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-pill);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border-float);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* On mobile the badge becomes a tappable FAB */
+@media (max-width: 767px) {
+  .mapResultsBadge {
+    pointer-events: auto;
+    cursor: pointer;
+    bottom: var(--space-6);
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    /* Tappable without text-select flicker */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: background var(--transition-fast), transform 80ms ease;
+  }
+
+  .mapResultsBadge:active {
+    transform: translateX(-50%) scale(0.96);
+    background: var(--color-primary-hover);
+  }
+}
+
+/* ─── Mobile layout ───────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: none;
+  }
+
+  .sidebarVisible {
+    display: flex;
+  }
+
+  .mapPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+  }
+
+  .mapPanelVisible {
+    display: block;
+  }
+
+  .mapResultsBadge {
+    bottom: var(--space-5);
+    font-size: var(--text-xs);
+  }
+}
+
+/* ─── Desktop: always show both ───────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex !important;
+  }
+
+  .mapPanel {
+    display: block !important;
+  }
+}

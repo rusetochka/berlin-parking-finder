@@ -1,0 +1,42 @@
+# Dependency directory
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Editor
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vercel
+.vercel
+
+.env*
+.vercel/
+.openai/
+node_modules/
+*.code-workspace
+*.pem
+*.key
+*.pfx
+*.sqlite*
+*.db
+verification.json

@@ -1,0 +1,240 @@
+/* ─── Design tokens — Liquid Glass theme (auto dark / light) ──────────────── */
+
+/* ══ DARK DEFAULTS ══════════════════════════════════════════════════════════ */
+
+:root {
+  color-scheme: dark;
+
+  /* ── Brand / accent ─────────────────────────────────────────────────── */
+  --color-primary:       #f87171;
+  --color-primary-hover: #fca5a5;
+  --color-primary-light: rgba(248, 113, 113, 0.18);
+  --color-primary-glow:  rgba(248, 113, 113, 0.45);
+
+  /* ── Difficulty palette ─────────────────────────────────────────────── */
+  --color-easy:        #4ade80;
+  --color-easy-bg:     rgba(74, 222, 128, 0.15);
+  --color-easy-border: rgba(74, 222, 128, 0.38);
+
+  --color-medium:        #fbbf24;
+  --color-medium-bg:     rgba(251, 191, 36, 0.15);
+  --color-medium-border: rgba(251, 191, 36, 0.38);
+
+  --color-hard:        #f87171;
+  --color-hard-bg:     rgba(248, 113, 113, 0.15);
+  --color-hard-border: rgba(248, 113, 113, 0.38);
+
+  /* ── Parking type accents ───────────────────────────────────────────── */
+  --color-garage:    #a78bfa;
+  --color-lot:       #38bdf8;
+  --color-park-ride: #34d399;
+  --color-street:    #c084fc;
+
+  /* ── Text ───────────────────────────────────────────────────────────── */
+  --color-text-primary:   #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.88);
+  --color-text-muted:     rgba(255, 255, 255, 0.60);
+  --color-text-inverse:   #0a0820; /* dark text for bright primary bg */
+
+  /* ── Feedback ───────────────────────────────────────────────────────── */
+  --color-error:    #f87171;
+  --color-error-bg: rgba(248, 113, 113, 0.15);
+  --color-info:     #60a5fa;
+  --color-info-bg:  rgba(96, 165, 250, 0.15);
+
+  /* ── Legacy aliases ─────────────────────────────────────────────────── */
+  --color-bg:            transparent;
+  --color-surface:       rgba(255, 255, 255, 0.08);
+  --color-border:        rgba(255, 255, 255, 0.18);
+  --color-border-strong: rgba(255, 255, 255, 0.30);
+
+  /* ── Glass ──────────────────────────────────────────────────────────── */
+  --glass-blur:       blur(20px) saturate(180%);
+  --glass-blur-heavy: blur(32px) saturate(200%);
+
+  /* ── Themed surface tokens ──────────────────────────────────────────── */
+  --surface-deep:        rgba(10, 8, 35, 0.55);   /* sidebar */
+  --surface-header:      rgba(10, 8, 35, 0.50);   /* header bar */
+  --surface-overlay:     rgba(15, 12, 41, 0.88);  /* dropdown, popups */
+  --surface-pill:        rgba(10, 8, 35, 0.65);   /* floating badge */
+  --surface-card:        rgba(255, 255, 255, 0.07);
+  --surface-card-hover:  rgba(255, 255, 255, 0.11);
+  --surface-card-active: rgba(248, 113, 113, 0.14);
+  --surface-input:       rgba(255, 255, 255, 0.10);
+  --surface-control:     rgba(255, 255, 255, 0.08); /* chips, buttons */
+  --surface-subtle:      rgba(255, 255, 255, 0.04); /* filterbar bg */
+  --surface-muted:       rgba(255, 255, 255, 0.05); /* dropdown header */
+  --surface-track:       rgba(255, 255, 255, 0.22); /* toggle track */
+
+  /* ── Themed border tokens ───────────────────────────────────────────── */
+  --border-soft:    rgba(255, 255, 255, 0.08); /* section dividers */
+  --border-glass:   rgba(255, 255, 255, 0.18); /* main glass border */
+  --border-card:    rgba(255, 255, 255, 0.13);
+  --border-float:   rgba(255, 255, 255, 0.20);
+  --border-chip:    rgba(255, 255, 255, 0.15);
+  --border-control: rgba(255, 255, 255, 0.16);
+
+  /* ── Primary-tinted ─────────────────────────────────────────────────── */
+  --primary-alpha-sm:   rgba(248, 113, 113, 0.12);
+  --primary-alpha-md:   rgba(248, 113, 113, 0.15);
+  --primary-alpha-lg:   rgba(248, 113, 113, 0.18);
+  --primary-alpha-xl:   rgba(248, 113, 113, 0.22);
+  --primary-ring:       rgba(248, 113, 113, 0.25);
+  --primary-border-alpha: rgba(248, 113, 113, 0.50);
+  --primary-glow-sm:    0 0 20px rgba(248, 113, 113, 0.12);
+  --primary-glow-lg:    0 0 24px rgba(248, 113, 113, 0.22);
+
+  /* ── Error-tinted ───────────────────────────────────────────────────── */
+  --error-alpha:        rgba(248, 113, 113, 0.15);
+  --error-border-alpha: rgba(248, 113, 113, 0.40);
+
+  /* ── Shadows ────────────────────────────────────────────────────────── */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.55);
+
+  /* ── Layout ─────────────────────────────────────────────────────────── */
+  --sidebar-width: 400px;
+  --header-height: 64px;
+
+  /* ── Spacing ─────────────────────────────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ── Border radius ──────────────────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* ── Typography ─────────────────────────────────────────────────────── */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', Consolas, monospace;
+
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   17px;
+  --text-lg:   18px;
+  --text-xl:   20px;
+  --text-2xl:  24px;
+
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* ── Z-index ─────────────────────────────────────────────────────────── */
+  --z-map:      0;
+  --z-panel:    10;
+  --z-header:   20;
+  --z-dropdown: 30;
+  --z-overlay:  40;
+  --z-toast:    50;
+}
+
+/* ══ LIGHT MODE OVERRIDES ═══════════════════════════════════════════════════ */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+
+    /* Brand — darker blue readable on white */
+    --color-primary:       #dc2626;
+    --color-primary-hover: #b91c1c;
+    --color-primary-light: rgba(220, 38, 38, 0.12);
+    --color-primary-glow:  rgba(220, 38, 38, 0.35);
+
+    /* Difficulty — saturated for light backgrounds */
+    --color-easy:        #16a34a;
+    --color-easy-bg:     rgba(22, 163, 74, 0.12);
+    --color-easy-border: rgba(22, 163, 74, 0.35);
+
+    --color-medium:        #b45309;
+    --color-medium-bg:     rgba(180, 83, 9, 0.10);
+    --color-medium-border: rgba(180, 83, 9, 0.32);
+
+    --color-hard:        #dc2626;
+    --color-hard-bg:     rgba(220, 38, 38, 0.10);
+    --color-hard-border: rgba(220, 38, 38, 0.32);
+
+    /* Parking types */
+    --color-garage:    #4f46e5;
+    --color-lot:       #0369a1;
+    --color-park-ride: #047857;
+    --color-street:    #6d28d9;
+
+    /* Text — dark on light */
+    --color-text-primary:   #0f172a;
+    --color-text-secondary: #334155;
+    --color-text-muted:     #64748b;
+    --color-text-inverse:   #ffffff;
+
+    /* Feedback */
+    --color-error:    #dc2626;
+    --color-error-bg: rgba(220, 38, 38, 0.08);
+    --color-info:     #1d4ed8;
+    --color-info-bg:  rgba(29, 78, 216, 0.10);
+
+    /* Legacy aliases */
+    --color-surface:       rgba(255, 255, 255, 0.60);
+    --color-border:        rgba(0, 0, 0, 0.10);
+    --color-border-strong: rgba(0, 0, 0, 0.18);
+
+    /* Surface tokens — frosted white glass */
+    --surface-deep:        rgba(240, 246, 255, 0.82);
+    --surface-header:      rgba(240, 246, 255, 0.78);
+    --surface-overlay:     rgba(251, 252, 255, 0.96);
+    --surface-pill:        rgba(255, 255, 255, 0.90);
+    --surface-card:        rgba(255, 255, 255, 0.68);
+    --surface-card-hover:  rgba(255, 255, 255, 0.86);
+    --surface-card-active: rgba(220, 38, 38, 0.09);
+    --surface-input:       rgba(255, 255, 255, 0.85);
+    --surface-control:     rgba(0, 0, 0, 0.05);
+    --surface-subtle:      rgba(0, 0, 0, 0.02);
+    --surface-muted:       rgba(0, 0, 0, 0.03);
+    --surface-track:       rgba(0, 0, 0, 0.16);
+
+    /* Border tokens — dark alpha on light */
+    --border-soft:    rgba(0, 0, 0, 0.07);
+    --border-glass:   rgba(0, 0, 0, 0.10);
+    --border-card:    rgba(0, 0, 0, 0.10);
+    --border-float:   rgba(0, 0, 0, 0.12);
+    --border-chip:    rgba(0, 0, 0, 0.12);
+    --border-control: rgba(0, 0, 0, 0.12);
+
+    /* Primary-tinted */
+    --primary-alpha-sm:     rgba(37, 99, 235, 0.08);
+    --primary-alpha-md:     rgba(37, 99, 235, 0.10);
+    --primary-alpha-lg:     rgba(37, 99, 235, 0.14);
+    --primary-alpha-xl:     rgba(37, 99, 235, 0.18);
+    --primary-ring:         rgba(37, 99, 235, 0.22);
+    --primary-border-alpha: rgba(37, 99, 235, 0.50);
+    --primary-glow-sm:      0 0 20px rgba(37, 99, 235, 0.07);
+    --primary-glow-lg:      0 0 24px rgba(37, 99, 235, 0.12);
+
+    /* Error-tinted */
+    --error-alpha:        rgba(220, 38, 38, 0.08);
+    --error-border-alpha: rgba(220, 38, 38, 0.30);
+
+    /* Lighter shadows */
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 4px 20px rgba(15, 23, 42, 0.10);
+    --shadow-lg: 0 8px 32px rgba(15, 23, 42, 0.14);
+    --shadow-xl: 0 20px 60px rgba(15, 23, 42, 0.18);
+  }
+}

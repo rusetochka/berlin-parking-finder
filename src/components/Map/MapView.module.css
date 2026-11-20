@@ -1,0 +1,79 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Contain Leaflet's internal z-indices (200–700) so they don't escape into
+     the root stacking context and paint over the search dropdown. */
+  isolation: isolate;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-pill);
+  color: var(--color-text-primary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border-float);
+}
+
+/* Mark parking button */
+.markModeBtn {
+  position: absolute;
+  bottom: 80px;
+  right: 12px;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--surface-pill);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  border: 1px solid var(--border-float);
+  box-shadow: var(--shadow-md);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.markModeBtn:hover {
+  background: var(--surface-card-hover);
+}
+
+.markModeBtnActive {
+  border-color: var(--color-primary);
+  background: var(--primary-alpha-sm);
+  color: var(--color-primary);
+}
+
+.markModeDots {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.markModeDots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
